@@ -1,0 +1,50 @@
+.nav{
+    display:flex;
+    justify-content: space-between;
+}
+.nav h1{
+    color: blue;
+    margin: 0px;
+    font-size: 40px;
+}
+.nav ul {
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  .nav li {
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+  .nav li a {
+    color: blue;
+    text-decoration: none;
+  }
+  .nav-search {
+    flex: 1px;
+    margin-top: 5px;
+    display: flex;
+    margin-left: 7%;
+    margin-right: 5%;
+  }
+  .nav input {
+    flex: 1;
+    color: blue;
+    border: 1px solid blue;
+      border-right-color: blue;
+      border-right-style: solid;
+      border-right-width: 1px;
+    height: 35px;
+    border-right: 0px;
+  }
+  .nav button {
+    flex: 1;
+    color: blue;
+    height: 40px;
+    border: 1px solid blue;
+      border-left-color: blue;
+      border-left-style: solid;
+      border-left-width: 1px;
+    border-left: 0px;
+  }

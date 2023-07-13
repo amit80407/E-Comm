@@ -1,0 +1,96 @@
+<div class="container ">
+    <div class="row">
+       
+        <div class="col-md-4 col-md-offset-4 m-auto mt-4 border border-1 border-primary p-0 ">
+            <form [formGroup]="SignUp" (ngSubmit)="onregister()" >
+                  
+                <div class="bg-primary text-center pb-2">
+                    <h1 >Register</h1>    
+
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">FullName</label>
+                    <input type="text" [class.is-invalid]="f['name'].invalid && f['name'].touched" class="form-control"
+                        name="name" formControlName="name">
+                </div>
+                <div *ngIf="(f['name'].invalid && f['name'].touched)  ||  f['name'].dirty">
+                    <small *ngIf="f['name'].errors && f['name'].errors['required']" class="text-danger"> Name Required
+                    </small>
+                    <small *ngIf="f['name'].errors && f['name'].errors['minlength']" class="text-danger"> minimum 3
+                        characters</small>
+                    <small *ngIf="f['name'].errors && f['name'].errors['maxlength']" class="text-danger"> maximum
+                        10characters</small>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">EmailAddress</label>
+                    <input type="email" [class.is-invalid]="f['email'].invalid && f['email'].touched"
+                        class="form-control" name="email" formControlName="email">
+                </div>
+                <div *ngIf="(f['email'].invalid && f['email'].touched)  ||  f['email'].dirty">
+                    <small *ngIf="f['email'].errors && f['email'].errors['required']" class="text-danger"> email must be
+                        required </small>
+                    <small *ngIf="f['email'].errors && f['email'].errors['pattern']" class="text-danger"> please enter
+                        valid email</small>
+                </div>
+                
+                <div>
+                    <label class="form-label">Password</label>
+                   
+                    <input type="password" [class.is-invalid]="f['password'].invalid && f['password'].touched"
+                        class="form-control" name="password" formControlName="password">
+                </div>
+                <div *ngIf="(f['password'].invalid && f['password'].touched)  ||  f['password'].dirty">
+                    <small *ngIf="f['password'].errors && f['password'].errors['required']" class="text-danger"> password required </small>
+                        
+
+                </div>
+                <div>
+                    <label class="form-label">Conform Password</label>
+                   
+                    <input type="password" [class.is-invalid]="f['conform_password'].invalid && f['conform_password'].touched"
+                        class="form-control" name="conform_password" formControlName="conform_password">
+
+                </div>
+                <div *ngIf="(f['conform_password'].invalid && f['conform_password'].touched)  ||  f['conform_password'].dirty">
+                    <small *ngIf="f['conform_password'].errors && f['conform_password'].errors['required']" class="text-danger"> 
+                        required </small>
+                        
+                </div>
+                <div *ngIf="passwordMatchError">
+                    <small class="text-danger" > password did not match</small>
+
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Number</label>
+                    <input type="number" [class.is-invalid]="f['number'].invalid && f['number'].touched"
+                        class="form-control" name="number" formControlName="number">
+                </div>
+                <div *ngIf="(f['number'].invalid && f['number'].touched)  ||  f['number'].dirty">
+                    <small *ngIf="f['number'].errors && f['number'].errors['required']" class="text-danger"> number must
+                        be required </small>
+
+                    <small *ngIf="f['number'].errors && f['number'].errors['pattern']" class="text-danger"> please enter valid number
+                        </small>
+
+                </div>
+                <br>
+                <div class="form-group ">
+                    <input type="submit" [disabled]="SignUp.invalid" value="Register" class="btn btn-primary btn-block w-100">
+
+                </div>
+                <div class="p-2">
+                    If Already Register: <a routerLink="/Login">Login</a>
+                </div>
+
+
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
